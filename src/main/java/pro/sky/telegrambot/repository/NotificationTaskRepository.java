@@ -12,4 +12,6 @@ public interface NotificationTaskRepository extends JpaRepository<NotificationTa
 
     List<NotificationTask> findNotificationTaskByTimestamp(LocalDateTime timestamp);
 
+    List<NotificationTask> findNotificationTaskByTimestampBefore(LocalDateTime timestamp);
+
 }

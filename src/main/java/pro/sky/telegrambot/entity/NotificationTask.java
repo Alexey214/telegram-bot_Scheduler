@@ -12,16 +12,16 @@ public class NotificationTask {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    Long chat_id;
-    String notification;
-    LocalDateTime timestamp;
+    private Long id;
+    private Long chatId;
+    private String notification;
+    private LocalDateTime timestamp;
 
     public NotificationTask() {
     }
 
-    public NotificationTask(Long chat_id, LocalDateTime timestamp, String notification) {
-        this.chat_id = chat_id;
+    public NotificationTask(Long chatId, LocalDateTime timestamp, String notification) {
+        this.chatId = chatId;
         this.notification = notification;
         this.timestamp = timestamp;
     }
@@ -34,12 +34,12 @@ public class NotificationTask {
         this.id = id;
     }
 
-    public Long getChat_id() {
-        return chat_id;
+    public Long getChatId() {
+        return chatId;
     }
 
-    public void setChat_id(Long chatId) {
-        this.chat_id = chatId;
+    public void setChatId(Long chatId) {
+        this.chatId = chatId;
     }
 
     public String getNotification() {
@@ -63,19 +63,19 @@ public class NotificationTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NotificationTask that = (NotificationTask) o;
-        return id.equals(that.id) && chat_id.equals(that.chat_id) && notification.equals(that.notification) && timestamp.equals(that.timestamp);
+        return id.equals(that.id) && chatId.equals(that.chatId) && notification.equals(that.notification) && timestamp.equals(that.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chat_id, notification, timestamp);
+        return Objects.hash(id, chatId, notification, timestamp);
     }
 
     @Override
     public String toString() {
         return "NotificationTask{" +
                 "id=" + id +
-                ", chatId=" + chat_id +
+                ", chatId=" + chatId +
                 ", notification='" + notification + '\'' +
                 ", timestamp=" + timestamp +
                 '}';
